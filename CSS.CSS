@@ -1,0 +1,182 @@
+:root {
+  --accent: #0056ff;
+  --muted: #666;
+  --bg: #ffffff;
+  --paper: #f7f8fa;
+  --max-width: 900px;
+  --gap: 20px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--paper);
+  color: #111;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.resume {
+  background: var(--bg);
+  max-width: var(--max-width);
+  width: 100%;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 2px solid #e6e9ef;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.photo img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  object-fit: cover;
+}
+
+.info h1 {
+  font-size: 28px;
+  color: var(--accent);
+}
+
+.title {
+  font-size: 16px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.contact p {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.contact a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+.summary {
+  margin-bottom: 20px;
+}
+
+.summary h2 {
+  font-size: 16px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.summary p {
+  color: #222;
+  line-height: 1.5;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--gap);
+}
+
+.left h2,
+.right h2 {
+  font-size: 16px;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.job,
+.edu {
+  margin-bottom: 15px;
+}
+
+.job h3 {
+  font-size: 15px;
+  color: #000;
+}
+
+.meta {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.job ul {
+  margin-left: 20px;
+  color: #333;
+  font-size: 14px;
+}
+
+.skills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.skills li {
+  background: #eef3ff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.footer {
+  border-top: 1px solid #e6e9ef;
+  margin-top: 20px;
+  padding-top: 10px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact {
+    text-align: center;
+  }
+}
+
+/* Print-friendly */
+@media print {
+  body {
+    background: white;
+    margin: 0;
+  }
+
+  .resume {
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+}
